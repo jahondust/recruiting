@@ -1,0 +1,964 @@
+{
+	"info": {
+		"_postman_id": "836cc854-d1ca-4ef1-b24e-4abd5892d1dc",
+		"name": "Recruiting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3038261"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "{{domain}}/api/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"anvar\",\r\n    \"email\": \"user@user.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\",\r\n    \"first_name\": \"Anvar\",\r\n    \"last_name\": \"Xoliqov\",\r\n    \"middle_name\": \"Obidovich\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/auth/register",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"organization@organization.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/auth/login",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/auth/me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/auth/me",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/auth/logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/auth/logout",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vacancy",
+			"item": [
+				{
+					"name": "{{domain}}/api/vacancies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/api/vacancies/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vacancies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/vacancies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Backend Developer\",\r\n    \"requirements\": \"PHP, Mysql, Docker\",\r\n    \"conditions\": \"Salary, Coffe end tea, Great team\",\r\n    \"salary\": 12000,\r\n    \"position_id\": 5,\r\n    \"skills\": [2, 5]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/vacancies",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vacancies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/vacancies/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/api/vacancies/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vacancies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/vacancies/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Backend Developer\",\r\n    \"requirements\": \"PHP, Mysql, Docker, Nginx\",\r\n    \"conditions\": \"Salary, Coffe end tea, Great team\",\r\n    \"salary\": 10000,\r\n    \"position_id\": 5,\r\n    \"skills\": [2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/vacancies/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vacancies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/vacancies/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/vacancies/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vacancies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/vacancies/2/responses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/vacancies/2/responses",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vacancies",
+								"2",
+								"responses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/vacancies/2/response",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resume_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/vacancies/2/response",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vacancies",
+								"2",
+								"response"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resume",
+			"item": [
+				{
+					"name": "{{domain}}/api/resumes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Backend Developer",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Predator-PC/Downloads/Telegram Desktop/ss9@2x.png"
+								},
+								{
+									"key": "salary",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "36",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "skills[]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/resumes",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/resumes/2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Backend Developer",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Predator-PC/Downloads/Telegram Desktop/ss9@2x.png"
+								},
+								{
+									"key": "salary",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "36",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "skills[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "languages[][language_id]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "languages[][level]",
+									"value": "intermediate",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/resumes/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Backend Developer",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Predator-PC/Downloads/Telegram Desktop/ss9@2x.png"
+								},
+								{
+									"key": "salary",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "36",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "skills[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "languages[0][language_id]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "languages[][level]",
+									"value": "intermediate",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/resumes/2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Backend Developer",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Predator-PC/Downloads/Telegram Desktop/ss9@2x.png"
+								},
+								{
+									"key": "salary",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "36",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "positions[]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "skills[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/resumes/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes/2/portfolios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Predator-PC/Downloads/Telegram Desktop/ss9@2x.png"
+								},
+								{
+									"key": "description",
+									"value": "proect",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/resumes/2/portfolios",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								"2",
+								"portfolios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes/2/portfolios/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Predator-PC/Downloads/Telegram Desktop/ss9@2x.png"
+								},
+								{
+									"key": "description",
+									"value": "Proect",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/resumes/2/portfolios/2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								"2",
+								"portfolios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes/2/portfolios/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/resumes/2/portfolios/2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								"2",
+								"portfolios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/resumes/2/vacancies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/resumes/2/vacancies/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"resumes",
+								"2",
+								"vacancies",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "{{domain}}/api/admin/vacancies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/admin/vacancies",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"vacancies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{domain}}/api/admin/resumes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/admin/resumes",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"resumes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
